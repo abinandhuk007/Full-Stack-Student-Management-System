@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Assignments</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                <li><a href="students.html">Manage Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="assignments.html" class="active">Assignments</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Assignments</h1>
+                <button class="btn" style="width: auto;" onclick="openModal('assignmentModal')">+ Add Assignment</button>
+            </header>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignmentsTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for adding assignment -->
+    <div id="assignmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Assignment</h2>
+                <span class="close-btn" onclick="closeModal('assignmentModal')">&times;</span>
+            </div>
+            <form id="assignmentForm">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description" required style="height: 100px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Due Date</label>
+                    <input type="date" id="due_date" required>
+                </div>
+                <button type="submit" class="btn">Save Assignment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/teacher.js"></script>
+</body>
+</html>

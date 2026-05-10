@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="student-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="student-attendance.html">My Attendance</a></li>
+                <li><a href="student-marks.html">My Marks</a></li>
+                <li><a href="student-assignments.html">Assignments</a></li>
+                <li><a href="student-fees.html">Fee Status</a></li>
+                <li><a href="student-announcements.html">Announcements</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Welcome, <span id="studentName">Student</span>!</h1>
+            </header>
+            
+            <div class="profile-large">
+                <h2>Student Full Profile</h2>
+
+                <div class="profile-icon-container">
+                    <div class="profile-avatar" id="studentLargeAvatar">ST</div>
+                </div>
+
+                <div class="profile-details-grid">
+                    <div class="profile-detail-item">
+                        <strong>Name:</strong>
+                        <span id="studentLargeName">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Class:</strong>
+                        <span id="studentLargeClass">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Roll No:</strong>
+                        <span id="studentLargeRoll">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Blood Group:</strong>
+                        <span id="studentLargeBloodGroup">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Phone:</strong>
+                        <span id="studentLargePhone">--</span>
+                    </div>
+                    <div class="profile-detail-item" style="grid-column: 1 / -1;">
+                        <strong>Address:</strong>
+                        <span id="studentLargeAddress">--</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/api.js"></script>
+    <script src="../js/student.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Marks</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="student-dashboard.html">Dashboard</a></li>
+                <li><a href="student-attendance.html">My Attendance</a></li>
+                <li><a href="student-marks.html" class="active">My Marks</a></li>
+                <li><a href="student-assignments.html">Assignments</a></li>
+                <li><a href="student-fees.html">Fee Status</a></li>
+                <li><a href="student-announcements.html">Announcements</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>My Academic Performance</h1>
+            </header>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marksTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../js/api.js"></script>
+    <script src="../js/student.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Fees</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                <li><a href="students.html">Manage Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="fees.html" class="active">Fees</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Student Fees</h1>
+            </header>
+            
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Expected Fee</h3>
+                    <p class="big-number">₹<span id="summaryTotalFee">--</span></p>
+                </div>
+                <div class="card">
+                    <h3>Total Collected</h3>
+                    <p class="big-number success-text">₹<span id="summaryPaidAmount">--</span></p>
+                </div>
+                <div class="card">
+                    <h3>Outstanding Balance</h3>
+                    <p class="big-number" style="color: #ef4444;">₹<span id="summaryBalance">--</span></p>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll No</th>
+                            <th>Total Fee</th>
+                            <th>Paid Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feesTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../js/api.js"></script>
+    <script src="../js/teacher.js"></script>
+</body>
+</html>

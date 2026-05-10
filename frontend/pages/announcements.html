@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Announcements</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                <li><a href="students.html">Manage Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="announcements.html" class="active">Announcements</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Announcements</h1>
+                <button class="btn" style="width: auto;" onclick="openModal('announcementModal')">+ Add Announcement</button>
+            </header>
+            
+            <div id="announcementsContainer">
+                <!-- Data will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for adding announcement -->
+    <div id="announcementModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Announcement</h2>
+                <span class="close-btn" onclick="closeModal('announcementModal')">&times;</span>
+            </div>
+            <form id="announcementForm">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="message" required style="height: 100px;"></textarea>
+                </div>
+                <button type="submit" class="btn">Post Announcement</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Content -->
+        <main class="main-content" style="margin-left: 0; width: 100%;">
+            <header>
+                <h1>My Profile</h1>
+                <div>
+                    <button class="logout-btn" onclick="goBack()" style="margin-right: 10px;">Back to Dashboard</button>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </header>
+            
+            <div class="dashboard-cards" style="justify-content: center;">
+                <div class="card profile-card" style="width: 500px; max-width: 100%;">
+                    <h3>Full Profile Details</h3>
+                    <p style="font-size:18px; line-height: 1.8;">
+                        <strong>Name:</strong> <span id="profileName">--</span><br>
+                        <strong>Email:</strong> <span id="profileEmail">--</span><br>
+                        <strong>Role:</strong> <span id="profileRole">--</span><br>
+                        
+                        <span id="studentSpecificInfo" style="display: none;">
+                            <strong>Class:</strong> <span id="profileClass">--</span><br>
+                            <strong>Roll No:</strong> <span id="profileRoll">--</span><br>
+                        </span>
+
+                        <strong>Blood Group:</strong> <span id="profileBloodGroup">--</span><br>
+                        <strong>Phone:</strong> <span id="profilePhone">--</span><br>
+                        <strong>Address:</strong> <span id="profileAddress">--</span>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function goBack() {
+            const role = localStorage.getItem('userRole');
+            if (role === 'teacher') {
+                window.location.href = 'teacher-dashboard.html';
+            } else if (role === 'student') {
+                window.location.href = 'student-dashboard.html';
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'login.html';
+        }
+    </script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Marks</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .marks-table input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .marks-table input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .avg-green {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .avg-red {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .card-table {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+        .submit-container {
+            margin-top: 20px;
+            text-align: right;
+        }
+        /* Toast notification */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;} 
+            to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+        @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;} 
+            to {bottom: 0; opacity: 0;}
+        }
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                <li><a href="students.html">Manage Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="marks.html" class="active">Marks</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Student Marks</h1>
+            </header>
+            
+            <div class="card-table table-container">
+                <table class="marks-table">
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Student Name</th>
+                            <th>Tamil</th>
+                            <th>English</th>
+                            <th>Maths</th>
+                            <th>Computer Science</th>
+                            <th>History</th>
+                            <th>Average</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marksTableBody">
+                        <!-- Data will be loaded here via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="submit-container">
+                <button class="btn" style="width: 200px;" onclick="saveAllMarks()">Save All Marks</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast">Marks updated successfully!</div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/marks.js"></script>
+</body>
+</html>

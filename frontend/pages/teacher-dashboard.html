@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teacher Portal</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="teacher-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="students.html">Manage Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Welcome, Teacher!</h1>
+                <div class="user-profile">Admin</div>
+            </header>
+
+
+
+            <div class="profile-large">
+                <h2>Teacher Full Profile</h2>
+
+                <div class="profile-icon-container">
+                    <div class="profile-avatar" id="teacherLargeAvatar">TA</div>
+                </div>
+
+                <div class="profile-details-grid">
+                    <div class="profile-detail-item">
+                        <strong>Name:</strong>
+                        <span id="teacherLargeName">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Email:</strong>
+                        <span id="teacherLargeEmail">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Blood Group:</strong>
+                        <span id="teacherLargeBloodGroup">--</span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <strong>Phone:</strong>
+                        <span id="teacherLargePhone">--</span>
+                    </div>
+                    <div class="profile-detail-item" style="grid-column: 1 / -1;">
+                        <strong>Address:</strong>
+                        <span id="teacherLargeAddress">--</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/api.js"></script>
+    <script src="../js/teacher.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+
+</html>
